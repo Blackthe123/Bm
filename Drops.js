@@ -1,4 +1,4 @@
-class Drop {
+class Drops {
     constructor(x,y){
         var options = {
             isStatic:false,
@@ -7,6 +7,7 @@ class Drop {
         }
 
         this.rain = Bodies.circle(x,y,5,options);
+        this.radius = 5;
         World.add(world, this.rain)
         
         
@@ -20,11 +21,11 @@ class Drop {
         }
 
     }
-    display(){
-        
+    show(){
+        var rainpos = this.rain.position;
         fill("Blue");
         ellipseMode(RADIUS);
-        ellipse(rainpos.x, rainpos.y, 5);
+        ellipse(rainpos.x, rainpos.y, this.radius, this.radius);
         
     }
     }
